@@ -1,0 +1,284 @@
+/*
+ Theme Name:     [divi-child-theme]
+ Theme URI:      https://[page-url]
+ Description:    Divi Child Theme
+ Author:         Compucentro
+ Author URI:     https://compucentro.co
+ Template:       Divi
+ Version:        1.0.1
+*/
+
+/* =Theme customization starts here
+------------------------------------------------------- */
+:root {
+  --accent-color: #cc1302;
+}
+
+/*
+ Indice
+  1. HTML
+  2. Tema
+  3. Plugins
+  4. Otros - Propietarios
+*/
+
+/* 1. HTML */
+input[type="checkbox"],
+input[type="radio"] {
+  clear: none;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 0;
+  height: 18px;
+  margin: -4px 4px 0 0;
+  outline: 0;
+  padding: 0 !important;
+  text-align: center;
+  vertical-align: middle;
+  width: 18px;
+  min-width: 18px;
+}
+input[type="text"],
+input.text,
+input.title,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  -webkit-border-radius: 0;
+  background-color: #eee;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  color: #999;
+  font-size: 14px;
+}
+label {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+small {
+  font-size: 80% !important;
+  font-style: italic;
+}
+table {
+  padding: 0px;
+}
+/* FIN HTML */
+
+/* 2. Tema */
+/* Mejorar la navegacion del menu en moviles */
+/* when mobile menu is open, change hamburger icon to x icon */
+#et_mobile_nav_menu .mobile_nav.opened .mobile_menu_bar::before {
+  content: "\4d";
+}
+
+/* makes sub sub menu icon be right arrow instead of down arrow */
+#top-menu
+  .menu-item-has-children
+  .menu-item-has-children
+  > a:first-child::after,
+#et-secondary-nav
+  .menu-item-has-children
+  .menu-item-has-children
+  > a:first-child::after {
+  content: "5";
+}
+
+/* - mobile menu toggling elements, injected via jQuery - */
+
+/* make menu list item be relative, to be able to position toggle within this item */
+#main-header #mobile_menu.et_mobile_menu .menu-item-has-children {
+  position: relative;
+}
+/* the new toggle element, which is added via jQuery */
+#main-header #mobile_menu.et_mobile_menu .sub-menu-toggle {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.03);
+  z-index: 1;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 50%;
+  top: 4px;
+  right: 4px;
+  cursor: pointer;
+  text-align: center;
+  color: #e5c300;
+}
+/* the new toggle element when popped */
+#main-header #mobile_menu.et_mobile_menu .sub-menu-toggle.popped {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+/* toggle icon */
+#main-header #mobile_menu.et_mobile_menu .sub-menu-toggle::before {
+  font-family: "ETmodules" !important;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 36px;
+  font-size: 24px;
+  text-transform: none;
+  content: "\33";
+}
+/* toggle icon when triggered */
+#main-header #mobile_menu.et_mobile_menu .sub-menu-toggle.popped::before {
+  content: "\32";
+}
+/* hide sub menus by default */
+#main-header #mobile_menu.et_mobile_menu .sub-menu-toggle ~ ul.sub-menu {
+  display: none !important;
+  padding-left: 0;
+}
+/* show sub menu when triggered via jQuery toggle, and add slight bg color */
+#main-header #mobile_menu.et_mobile_menu .sub-menu-toggle.popped ~ ul.sub-menu {
+  display: block !important;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+/* remove sub menu list item left padding, since padding will be on anchors */
+#main-header #mobile_menu.et_mobile_menu li li {
+  padding-left: 0;
+}
+
+/* adjust mobile menu anchors side paddings */
+#main-header #mobile_menu.et_mobile_menu li a {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/* indent sub menu */
+#main-header #mobile_menu.et_mobile_menu li li a {
+  padding-left: 40px;
+  padding-right: 20px;
+}
+/* indent sub sub menus further */
+#main-header #mobile_menu.et_mobile_menu li li li a {
+  padding-left: 60px;
+  padding-right: 20px;
+}
+/* if mobile menu anchor has toggle, make room for it to fit next to the link */
+#main-header
+  #mobile_menu.et_mobile_menu
+  .menu-item-has-children
+  .sub-menu-toggle
+  + a {
+  padding-right: 44px;
+}
+
+/* - end mobile menu toggling elements - */
+
+/* undo Divi's default styling of mobile menu links that have children */
+#main-header #mobile_menu.et_mobile_menu .menu-item-has-children > a {
+  background-color: transparent;
+  font-weight: inherit;
+}
+
+/* make the current page's mobile menu link be different */
+#main-header #mobile_menu.et_mobile_menu li.current-menu-item > a {
+  font-weight: bolder;
+}
+/* FIN Mejorar la navegacion del menu en moviles */
+
+/* Link "Leer mas" como boton */
+.more-link {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  padding: 5px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+/* FIN Tema */
+
+/* 3. Plugins */
+/* Aplicar estilos de DIVI a Contact Form 7 */
+.wpcf7-text,
+.wpcf7-textarea,
+.wpcf7-captchar {
+  background-color: #eee !important;
+  border: 1px solid #999999 !important;
+  width: 100% !important;
+  -moz-border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  border-radius: 0 !important;
+  font-size: 14px;
+  color: #12325e !important;
+  padding: 16px !important;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.wpcf7-submit {
+  color: var(--accent-color) !important;
+  margin: 8px auto 0;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  padding: 6px 20px;
+  line-height: 1.7em;
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.wpcf7-submit:hover {
+  background-color: #eee;
+  border-color: #eee;
+  padding: 6px 20px !important;
+}
+span.wpcf7-list-item {
+  margin: 0 !important;
+}
+/* FIN Aplicar estilos de DIVI a Contact Form 7 */
+/* FIN Plugins */
+
+/* 4. Otros - Propietarios */
+/* Cambiar orden de columnas en moviles */
+/* Via: https://www.elegantthemes.com/blog/divi-resources/how-to-change-divis-column-stacking-order-on-mobile-devices */
+@media all and (max-width: 980px) {
+  /*** wrap row in a flex box ***/
+  .custom_row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    /* Safari 6.1+ */
+    flex-wrap: wrap;
+  }
+  /*** custom classes that will designate the order of columns in the flex box row ***/
+  .first-on-mobile {
+    -webkit-order: 1;
+    order: 1;
+  }
+  .second-on-mobile {
+    -webkit-order: 2;
+    order: 2;
+  }
+  .third-on-mobile {
+    -webkit-order: 3;
+    order: 3;
+  }
+  .fourth-on-mobile {
+    -webkit-order: 4;
+    order: 4;
+  }
+  /*** add margin to last column ***/
+  .custom_row:last-child .et_pb_column:last-child {
+    margin-bottom: 30px;
+  }
+}
+/* Cambiar orden de columnas en moviles */
+/* FIN Otros - Propietarios */
+/* FIN Hoja de Estilos */
