@@ -66,7 +66,7 @@ Utilizar _git_ para clonar el repositorio
 
 ## Mejorar la navegacion del menu en móviles [(via)](https://gist.github.com/Garconis/a3855dbd7bfb7eeaebe1601d11b33979)
 
-En la hoja de estilo está incluidas unas líneas que mejoran el menú principal en dispositivos móviles; sin embargo, se hace necesario agregar el siguinte código Javascript en **_Divi->Opciones del tema->Integración_** bajo la sección _Agregar código..._:
+En la hoja de estilo está incluidas unas líneas que mejoran el menú principal en dispositivos móviles; sin embargo, se hace necesario agregar el siguinte código Javascript en **_Divi->Opciones del tema->Integración_** bajo la sección _Agregar código al <body> (bueno para los códigos de seguimiento, tales como Google Analytics)_:
 
 ```js
 <script>
