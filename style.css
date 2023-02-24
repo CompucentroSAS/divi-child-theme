@@ -70,12 +70,9 @@ table {
 
 /* 2. Tema */
 /* Mejorar la navegacion del menu en moviles */
-/* when mobile menu is open, change hamburger icon to x icon */
 #et_mobile_nav_menu .mobile_nav.opened .mobile_menu_bar::before {
   content: "\4d";
 }
-
-/* makes sub sub menu icon be right arrow instead of down arrow */
 #top-menu
   .menu-item-has-children
   .menu-item-has-children
@@ -86,14 +83,9 @@ table {
   > a:first-child::after {
   content: "5";
 }
-
-/* - mobile menu toggling elements, injected via jQuery - */
-
-/* make menu list item be relative, to be able to position toggle within this item */
 #main-header #mobile_menu.et_mobile_menu .menu-item-has-children {
   position: relative;
 }
-/* the new toggle element, which is added via jQuery */
 #main-header #mobile_menu.et_mobile_menu .sub-menu-toggle {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.03);
@@ -108,11 +100,9 @@ table {
   text-align: center;
   color: #e5c300;
 }
-/* the new toggle element when popped */
 #main-header #mobile_menu.et_mobile_menu .sub-menu-toggle.popped {
   background-color: rgba(0, 0, 0, 0.1);
 }
-/* toggle icon */
 #main-header #mobile_menu.et_mobile_menu .sub-menu-toggle::before {
   font-family: "ETmodules" !important;
   font-weight: normal;
@@ -125,41 +115,32 @@ table {
   text-transform: none;
   content: "\33";
 }
-/* toggle icon when triggered */
 #main-header #mobile_menu.et_mobile_menu .sub-menu-toggle.popped::before {
   content: "\32";
 }
-/* hide sub menus by default */
 #main-header #mobile_menu.et_mobile_menu .sub-menu-toggle ~ ul.sub-menu {
   display: none !important;
   padding-left: 0;
 }
-/* show sub menu when triggered via jQuery toggle, and add slight bg color */
 #main-header #mobile_menu.et_mobile_menu .sub-menu-toggle.popped ~ ul.sub-menu {
   display: block !important;
   background-color: rgba(0, 0, 0, 0.03);
 }
-/* remove sub menu list item left padding, since padding will be on anchors */
 #main-header #mobile_menu.et_mobile_menu li li {
   padding-left: 0;
 }
-
-/* adjust mobile menu anchors side paddings */
 #main-header #mobile_menu.et_mobile_menu li a {
   padding-left: 20px;
   padding-right: 20px;
 }
-/* indent sub menu */
 #main-header #mobile_menu.et_mobile_menu li li a {
   padding-left: 40px;
   padding-right: 20px;
 }
-/* indent sub sub menus further */
 #main-header #mobile_menu.et_mobile_menu li li li a {
   padding-left: 60px;
   padding-right: 20px;
 }
-/* if mobile menu anchor has toggle, make room for it to fit next to the link */
 #main-header
   #mobile_menu.et_mobile_menu
   .menu-item-has-children
@@ -167,32 +148,34 @@ table {
   + a {
   padding-right: 44px;
 }
-
-/* - end mobile menu toggling elements - */
-
-/* undo Divi's default styling of mobile menu links that have children */
 #main-header #mobile_menu.et_mobile_menu .menu-item-has-children > a {
   background-color: transparent;
   font-weight: inherit;
 }
-
-/* make the current page's mobile menu link be different */
 #main-header #mobile_menu.et_mobile_menu li.current-menu-item > a {
   font-weight: bolder;
 }
 /* FIN Mejorar la navegacion del menu en moviles */
 
 /* Link "Leer mas" como boton */
-.more-link {
+.et_pb_post a.more-link {
   display: block;
   text-align: center;
   margin-top: 10px;
-  color: var(--accent-color);
-  border: 1px solid var(--accent-color);
+  background: var(--accent-color);
+  border: 1px solid transparent;
+  color: #fff;
   border-radius: 4px;
   padding: 5px;
   text-transform: capitalize;
   letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+.et_pb_post a.more-link:hover {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  background: transparent;
+  transition: all 0.3s ease-in-out;
 }
 /* FIN Tema */
 
@@ -204,8 +187,6 @@ table {
   background-color: #eee !important;
   border: 1px solid #999999 !important;
   width: 100% !important;
-  -moz-border-radius: 0 !important;
-  -webkit-border-radius: 0 !important;
   border-radius: 0 !important;
   font-size: 14px;
   color: #12325e !important;
@@ -220,23 +201,20 @@ table {
   cursor: pointer;
   font-size: 20px;
   font-weight: 500;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+  border-radius: 4px;
   padding: 6px 20px;
   line-height: 1.7em;
   background: transparent;
   border: 2px solid var(--accent-color);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -moz-transition: all 0.2s;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
 }
 .wpcf7-submit:hover {
-  background-color: #eee;
+  color: #fff !important;
   border-color: #eee;
+  background: var(--accent-color);
   padding: 6px 20px !important;
+  transition: all 0.3s ease-in-out;
 }
 span.wpcf7-list-item {
   margin: 0 !important;

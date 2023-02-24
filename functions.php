@@ -4,8 +4,9 @@
  * Indice
  * 1. Generales
  * 2. DIVI
- * 3. Otros i.e. WooCommerce
+ * 3. Otros
  */
+
 function my_theme_enqueue_styles()
 {
 	wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
@@ -13,7 +14,7 @@ function my_theme_enqueue_styles()
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
 /* 1. Generales */
-/* Activar rss para post, galerias y productos */
+/* Activar rss para posts, galerias y productos */
 function add_cpts_to_rss_feed($args)
 {
 	if (isset($args['feed']) && !isset($args['post_type']))

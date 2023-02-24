@@ -56,7 +56,7 @@ Utilizar _git_ para clonar el repositorio
    * Indice
    * 1. Generales
    * 2. DIVI
-   * 3. Otros i.e. WooCommerce
+   * 3. Otros
    */
   ```
 
@@ -71,27 +71,22 @@ En la hoja de estilo está incluidas unas líneas que mejoran el menú principal
 ```js
 <script>
 jQuery(document).ready(function ($) {
-  // Create collapsible sub menus in mobile Divi Header Nav
   $('<div class="sub-menu-toggle"></div>').insertBefore(
     "#main-header #mobile_menu.et_mobile_menu .menu-item-has-children > a"
   );
-  // Create collapsible sub menus in mobile Divi Theme Builder Menu
   $('<div class="sub-menu-toggle"></div>').insertBefore(
     ".et_pb_module.et_pb_menu .et_mobile_menu .menu-item-has-children > a"
   );
-  // Toggle the class to be popped on mobile Divi Header Nav
   $("#main-header #mobile_menu.et_mobile_menu .sub-menu-toggle").click(
     function () {
       $(this).toggleClass("popped");
     }
   );
-  // Toggle the class to be popped on mobile Divi Theme Builder Menu
   $(".et_pb_module.et_pb_menu .et_mobile_menu .sub-menu-toggle").click(
     function () {
       $(this).toggleClass("popped");
     }
   );
-  // Replace the mobile Divi Theme Builder Menu toggle with different href other than # hash, to prevent scroll to top on sub-menu-toggle clicks
   $('.et_pb_module.et_pb_menu a.mobile_nav[href="#"]').attr("href", "#0");
 });
 </script>
