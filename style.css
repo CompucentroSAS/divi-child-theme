@@ -5,7 +5,7 @@
  Author:         Compucentro
  Author URI:     https://compucentro.co
  Template:       Divi
- Version:        1.0.2
+ Version:        1.0.3
 */
 
 /* =Theme customization starts here
@@ -43,7 +43,13 @@ input[type="radio"] {
 }
 
 input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
 input.text,
+input.date,
+input.tel,
+input.email,
 input.title,
 textarea,
 select {
@@ -71,7 +77,6 @@ small {
 table {
   padding: 0px;
 }
-
 /* FIN HTML */
 
 /* 2. Tema */
@@ -80,8 +85,8 @@ table {
   content: "\4d";
 }
 
-#top-menu .menu-item-has-children .menu-item-has-children>a:first-child::after,
-#et-secondary-nav .menu-item-has-children .menu-item-has-children>a:first-child::after {
+#top-menu .menu-item-has-children .menu-item-has-children > a:first-child::after,
+#et-secondary-nav .menu-item-has-children .menu-item-has-children > a:first-child::after {
   content: "5";
 }
 
@@ -125,12 +130,12 @@ table {
   content: "\32";
 }
 
-#main-header #mobile_menu.et_mobile_menu .sub-menu-toggle~ul.sub-menu {
+#main-header #mobile_menu.et_mobile_menu .sub-menu-toggle ~ ul.sub-menu {
   display: none !important;
   padding-left: 0;
 }
 
-#main-header #mobile_menu.et_mobile_menu .sub-menu-toggle.popped~ul.sub-menu {
+#main-header #mobile_menu.et_mobile_menu .sub-menu-toggle.popped ~ ul.sub-menu {
   display: block !important;
   background-color: rgba(0, 0, 0, 0.03);
 }
@@ -154,19 +159,18 @@ table {
   padding-right: 20px;
 }
 
-#main-header #mobile_menu.et_mobile_menu .menu-item-has-children .sub-menu-toggle+a {
+#main-header #mobile_menu.et_mobile_menu .menu-item-has-children .sub-menu-toggle + a {
   padding-right: 44px;
 }
 
-#main-header #mobile_menu.et_mobile_menu .menu-item-has-children>a {
+#main-header #mobile_menu.et_mobile_menu .menu-item-has-children > a {
   background-color: transparent;
   font-weight: inherit;
 }
 
-#main-header #mobile_menu.et_mobile_menu li.current-menu-item>a {
+#main-header #mobile_menu.et_mobile_menu li.current-menu-item > a {
   font-weight: bolder;
 }
-
 /* FIN Mejorar la navegacion del menu en moviles */
 
 /* Link "Leer mas" como boton */
@@ -190,7 +194,6 @@ table {
   background: transparent;
   transition: all 0.3s ease-in-out;
 }
-
 /* FIN Tema */
 
 /* 3. Plugins */
@@ -208,6 +211,11 @@ table {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+.wpcf7-select {
+  border: 1px solid #999 !important;
+  color: var(--text-color) !important;
 }
 
 .wpcf7-submit {
@@ -237,6 +245,13 @@ span.wpcf7-list-item {
   margin: 0 !important;
 }
 
+.wpcf7-list-item label > input[type="radio"] {
+  margin-left: 1em;
+}
+
+.wpcf7-list-item label > input[type="radio"]:first-child {
+  margin-left: 0em;
+}
 /* FIN Aplicar estilos de DIVI a Contact Form 7 */
 /* FIN Plugins */
 
@@ -244,7 +259,6 @@ span.wpcf7-list-item {
 /* Cambiar orden de columnas en moviles */
 /* Via: https://www.elegantthemes.com/blog/divi-resources/how-to-change-divis-column-stacking-order-on-mobile-devices */
 @media all and (max-width: 980px) {
-
   /*** wrap row in a flex box ***/
   .custom_row {
     display: -webkit-box;
@@ -283,7 +297,6 @@ span.wpcf7-list-item {
     margin-bottom: 30px;
   }
 }
-
 /* FIN Cambiar orden de columnas en moviles */
 
 /* Botones lado a lado */
@@ -293,7 +306,6 @@ span.wpcf7-list-item {
   flex-wrap: wrap;
   gap: 15px;
 }
-
 /* FIN Botones lado a lado */
 /* FIN Otros - Propietarios */
 /* FIN Hoja de Estilos */
