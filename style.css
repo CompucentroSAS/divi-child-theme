@@ -22,7 +22,7 @@
   1. HTML
   2. Tema
   3. Plugins
-  4. Otros - Propietarios
+  4. Otros/Propietarios
 */
 
 /* 1. HTML */
@@ -173,6 +173,24 @@ table {
 }
 /* FIN Mejorar la navegacion del menu en moviles */
 
+/* Menú: alto de línea, clase para ajustar item */
+#top-menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu-item {
+  line-height: 1.5 !important;
+}
+
+.menu-item-narrowed {
+  max-width: 236px;
+}
+
+.et_mobile_menu .menu-item-narrowed {
+  max-width: 100%;
+}
+
 /* Link "Leer mas" como boton */
 .et_pb_post a.more-link {
   display: block;
@@ -255,7 +273,7 @@ span.wpcf7-list-item {
 /* FIN Aplicar estilos de DIVI a Contact Form 7 */
 /* FIN Plugins */
 
-/* 4. Otros - Propietarios */
+/* 4. Otros/Propietarios */
 /* Cambiar orden de columnas en moviles */
 /* Via: https://www.elegantthemes.com/blog/divi-resources/how-to-change-divis-column-stacking-order-on-mobile-devices */
 @media all and (max-width: 980px) {
