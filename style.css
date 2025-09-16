@@ -207,11 +207,11 @@ table {
   line-height: 1.5 !important;
 }
 
-.menu-item-narrowed {
+.cc-menu-item-narrowed {
   max-width: 236px;
 }
 
-.et_mobile_menu .menu-item-narrowed {
+.et_mobile_menu .cc-menu-item-narrowed {
   max-width: 100%;
 }
 /* FIN Tema */
