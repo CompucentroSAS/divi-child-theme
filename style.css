@@ -5,7 +5,7 @@
  Author:         Compucentro
  Author URI:     https://compucentro.co
  Template:       Divi
- Version:        1.0.3
+ Version:        1.0.4
 */
 
 /* =Theme customization starts here
@@ -320,5 +320,17 @@ span.wpcf7-list-item {
   gap: 15px;
 }
 /* FIN Botones lado a lado */
+
+/* Menu principal como mapa del sitio */
+#cc-sitemap-menu li a,
+#cc-sitemap-menu ul li a {
+  color: var(--text-color);
+  text-decoration: underline;
+  text-decoration-color: #0c71c3;
+}
+
+#cc-sitemap-menu li.cc-menu-item-narrowed {
+  max-width: unset;
+}
 /* FIN Otros - Propietarios */
 /* FIN Hoja de Estilos */

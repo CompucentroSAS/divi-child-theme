@@ -40,4 +40,16 @@ add_filter('et_project_posttype_args', 'mytheme_et_project_posttype_args', 10, 1
 /* FIN DIVI */
 
 /* 3. Otros */
+/* Shortcode para presentar el menu principal como mapa del sitio */
+function main_menu_as_sitemap_shortcode() {
+    $my_args = array(
+        'menu_class' => 'cc-sitemap',
+        'menu_id' => 'cc-sitemap-menu',
+        'container' => '',
+        'echo' => FALSE,
+        );
+    $primary_nav = wp_nav_menu( $my_args );
+    return $primary_nav;
+}
+add_shortcode('cc_main_menu_as_sitemap', 'main_menu_as_sitemap_shortcode');
 /* FIN Otros */
